@@ -2,23 +2,23 @@ const mongoose = require("mongoose");
 
 const productSchema = new mongoose.Schema(
   {
-    productId: { type: Number, required: true, unique: true }, // Unique product identifier
-    modelNo: { type: String, required: true },
-    frameSize: { type: String, required: true },
-    frameWidth: { type: Number, required: true },
-    frameDimensions: { type: String, required: true },
-    frameColor: { type: String, required: true },
+    product_id: { type: Number, required: true, unique: true }, 
+    model_no: { type: String, required: true },
+    frame_size: { type: String, required: true },
+    frame_width: { type: Number, required: true },
+    frame_dimensions: { type: String, required: true },
+    frame_color: { type: String, required: true },
+    price_inr: { type: Number, required: true },
+    discount_price_inr: { type: Number, required: true },
+    discount_percentage: { type: Number, required: true },
     images: [{ type: String }], // Array of image URLs
     reviews: [
       {
-        userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+        user: { type: String, required: true },
         rating: { type: Number, min: 1, max: 5, required: true },
         comment: { type: String, required: true },
       },
     ],
-    originalPrice: { type: Number, required: true },
-    discountPrice: { type: Number, required: true },
-    discountPercentage: { type: Number, required: true },
   },
   { timestamps: true }
 );

@@ -1,6 +1,8 @@
 const generateToken = require("../utils/generateToken");
 const User = require("../models/userSchema");
 
+
+// 🔹 User Register
 const  registerUser = async (req, res) => {
   const { username, email, password } = req.body;
 
@@ -42,7 +44,7 @@ const  registerUser = async (req, res) => {
 };
 
 
-
+// 🔹 User Login
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
 

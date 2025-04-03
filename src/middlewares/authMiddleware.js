@@ -9,7 +9,8 @@ const authMiddleware = (req, res, next) => {
     // 🔹Verify Access Token
     const decoded = jwt.verify(token, process.env.ACCESS_SECRET);
     req.user = decoded;
-    return next(); // ✅ Token is valid, continue request
+    return next(); 
+
   } catch (error) {
     if (error.name === "TokenExpiredError") {
       // 🔹 If Access Token is expired, check for Refresh Token

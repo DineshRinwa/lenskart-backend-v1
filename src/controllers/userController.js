@@ -1,6 +1,8 @@
 const User = require("../models/userSchema");
 const bcrypt = require("bcrypt");
 
+
+// 🔹 Update Password
 const updatePassword = async (req, res) => {
   try {
     const userId = req.user?.id;
